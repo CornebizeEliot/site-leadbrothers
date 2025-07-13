@@ -31,17 +31,6 @@
             transform: translateY(-3px);
             box-shadow: 0 10px 15px rgba(59, 130, 246, 0.3), 0 4px 6px rgba(0,0,0,0.08);
         }
-        /* Styles pour le chatbot */
-        .chat-bubble-bot {
-            background-color: #E0E7FF; /* Indigo 100 */
-            color: #3730A3; /* Indigo 800 */
-            align-self: flex-start;
-        }
-        .chat-bubble-user {
-            background-color: #E5E7EB; /* Gray 200 */
-            color: #1F2937; /* Gray 800 */
-            align-self: flex-end;
-        }
     </style>
 </head>
 <body class="text-gray-800">
@@ -60,9 +49,10 @@
                         <text x="50" y="95" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#1F2937" font-weight="500" letter-spacing="0.1em">LEADBROTHERS</text>
                     </svg>
                 </a>
-                <button type="button" class="cta-trigger cta-button bg-blue-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-blue-700 hidden sm:block">
+                <!-- MODIFICATION ICI: Bouton redevient un lien direct -->
+                <a href="https://calendly.com/eliot-cornebize/30min" target="_blank" class="cta-button bg-blue-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-blue-700 hidden sm:block">
                     Prendre RDV
-                </button>
+                </a>
             </div>
         </header>
 
@@ -76,9 +66,10 @@
                 <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">
                     Générez plus de leads, signez plus de clients, et explosez votre chiffre d'affaires grâce à nos stratégies sur-mesure.
                 </p>
-                <button type="button" class="cta-trigger cta-button bg-blue-600 text-white font-bold text-lg px-8 py-4 rounded-lg hover:bg-blue-700 inline-block">
+                <!-- MODIFICATION ICI: Bouton redevient un lien direct -->
+                <a href="https://calendly.com/eliot-cornebize/30min" target="_blank" class="cta-button bg-blue-600 text-white font-bold text-lg px-8 py-4 rounded-lg hover:bg-blue-700 inline-block">
                     Planifier un Appel Stratégique Gratuit
-                </button>
+                </a>
                 <p class="text-sm text-gray-500 mt-4">100% offert et sans engagement.</p>
             </section>
 
@@ -140,7 +131,6 @@
 
             <!-- About Us Section -->
             <section id="qui-sommes-nous" class="py-20 bg-white rounded-2xl shadow-xl my-16">
-                <!-- MODIFICATION ICI: Suppression de la grille et centrage du contenu texte -->
                 <div class="container mx-auto px-6 text-center max-w-3xl">
                     <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Une histoire de famille au service de votre croissance.</h2>
                     <div class="mt-4 space-y-4 text-gray-600">
@@ -184,9 +174,10 @@
                     <p class="text-lg text-blue-100 max-w-2xl mx-auto mb-8">
                         Ne perdez plus un seul client potentiel. Réservez votre appel stratégique 100% offert et découvrez le plan d'action personnalisé que nous avons pour vous.
                     </p>
-                    <button type="button" class="cta-trigger cta-button bg-white text-blue-700 font-bold text-lg px-8 py-4 rounded-lg hover:bg-gray-100">
+                    <!-- MODIFICATION ICI: Bouton redevient un lien direct -->
+                    <a href="https://calendly.com/eliot-cornebize/30min" target="_blank" class="cta-button bg-white text-blue-700 font-bold text-lg px-8 py-4 rounded-lg hover:bg-gray-100">
                         Je Veux Mon Plan d'Action Gratuit
-                    </button>
+                    </a>
                 </div>
             </section>
         </main>
@@ -252,35 +243,7 @@
         </div>
     </div>
 
-    <!-- CHATBOT MODAL -->
-    <div id="chatbot-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60 backdrop-blur-sm">
-        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md m-4 transform transition-all">
-            <div class="p-6">
-                <div class="flex justify-between items-center mb-4">
-                    <h3 class="text-lg font-bold text-gray-800">Agent Qualificateur IA</h3>
-                    <button id="close-chatbot" class="text-gray-400 hover:text-gray-600">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-                    </button>
-                </div>
-                <div id="chat-window" class="h-80 overflow-y-auto pr-4 space-y-4 flex flex-col">
-                    <!-- Les messages du chat apparaîtront ici -->
-                </div>
-                <div id="chat-input-container" class="mt-4">
-                    <div class="flex space-x-2">
-                        <input type="text" id="chat-input" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Écrivez votre réponse...">
-                        <button id="chat-send" class="bg-blue-600 text-white font-semibold px-4 py-2 rounded-lg hover:bg-blue-700">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                        </button>
-                    </div>
-                </div>
-                <div id="final-cta-container" class="hidden mt-4 text-center">
-                     <a href="https://calendly.com/eliot-cornebize/30min" target="_blank" class="cta-button bg-green-500 text-white font-bold text-lg px-8 py-4 rounded-lg hover:bg-green-600 inline-block w-full">
-                        Finaliser la prise de RDV
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- MODIFICATION ICI: Suppression du chatbot modal -->
 
     <script>
         // --- SCRIPT POUR LA NAVIGATION ENTRE LES PAGES ---
@@ -305,93 +268,6 @@
                 window.scrollTo(0, 0);
             });
         }
-
-        // --- SCRIPT POUR LE CHATBOT IA ---
-        const chatbotModal = document.getElementById('chatbot-modal');
-        const ctaTriggers = document.querySelectorAll('.cta-trigger');
-        const closeChatbotBtn = document.getElementById('close-chatbot');
-        const chatWindow = document.getElementById('chat-window');
-        const chatInput = document.getElementById('chat-input');
-        const chatSendBtn = document.getElementById('chat-send');
-        const chatInputContainer = document.getElementById('chat-input-container');
-        const finalCtaContainer = document.getElementById('final-cta-container');
-
-        const questions = [
-            "Bonjour ! Pour mieux préparer notre appel, quel est votre secteur d'activité ? (ex: Restaurant, E-commerce, Coach...)",
-            "Parfait. Et quel est votre objectif principal actuellement ? (ex: Augmenter les ventes, Obtenir plus de RDV...)",
-            "Compris. Avez-vous déjà un budget mensuel à allouer à la publicité ? Même une estimation est utile."
-        ];
-        let currentQuestionIndex = 0;
-
-        const openChatbot = () => {
-            chatbotModal.classList.remove('hidden');
-            resetChat();
-            askQuestion();
-        };
-
-        const closeChatbot = () => {
-            chatbotModal.classList.add('hidden');
-        };
-
-        const addMessage = (message, sender) => {
-            const bubble = document.createElement('div');
-            bubble.className = `w-fit max-w-xs lg:max-w-sm px-4 py-2 rounded-xl chat-bubble-${sender}`;
-            bubble.textContent = message;
-            chatWindow.appendChild(bubble);
-            chatWindow.scrollTop = chatWindow.scrollHeight;
-        };
-
-        const askQuestion = () => {
-            if (currentQuestionIndex < questions.length) {
-                setTimeout(() => {
-                    addMessage(questions[currentQuestionIndex], 'bot');
-                }, 500);
-            } else {
-                endConversation();
-            }
-        };
-        
-        const handleUserInput = () => {
-            const message = chatInput.value.trim();
-            if (message === '') return;
-
-            addMessage(message, 'user');
-            chatInput.value = '';
-            currentQuestionIndex++;
-            askQuestion();
-        };
-
-        const endConversation = () => {
-            setTimeout(() => {
-                addMessage("Excellent, il semble que nous soyons parfaitement alignés. Merci pour ces précisions !", 'bot');
-                chatInputContainer.classList.add('hidden');
-                finalCtaContainer.classList.remove('hidden');
-            }, 500);
-        };
-
-        const resetChat = () => {
-            chatWindow.innerHTML = '';
-            currentQuestionIndex = 0;
-            chatInputContainer.classList.remove('hidden');
-            finalCtaContainer.classList.add('hidden');
-        };
-
-        ctaTriggers.forEach(btn => btn.addEventListener('click', openChatbot));
-        closeChatbotBtn.addEventListener('click', closeChatbot);
-        chatSendBtn.addEventListener('click', handleUserInput);
-        chatInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') {
-                handleUserInput();
-            }
-        });
-        // Close modal on outside click
-        chatbotModal.addEventListener('click', (e) => {
-            if (e.target === chatbotModal) {
-                closeChatbot();
-            }
-        });
-
     </script>
 </body>
 </html>
-
