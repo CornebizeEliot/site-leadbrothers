@@ -17,7 +17,7 @@
         body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
-            background-color: #f9fafb; /* Slightly off-white for a softer look */
+            background-color: #f9fafb;
         }
         .service-card:hover {
             transform: translateY(-8px);
@@ -31,6 +31,17 @@
             transform: translateY(-3px);
             box-shadow: 0 10px 15px rgba(59, 130, 246, 0.3), 0 4px 6px rgba(0,0,0,0.08);
         }
+        /* Styles pour le chatbot */
+        .chat-bubble-bot {
+            background-color: #E0E7FF; /* Indigo 100 */
+            color: #3730A3; /* Indigo 800 */
+            align-self: flex-start;
+        }
+        .chat-bubble-user {
+            background-color: #E5E7EB; /* Gray 200 */
+            color: #1F2937; /* Gray 800 */
+            align-self: flex-end;
+        }
     </style>
 </head>
 <body class="text-gray-800">
@@ -41,8 +52,7 @@
         <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
             <div class="container mx-auto px-6 py-4 flex justify-between items-center">
                 <a href="#" class="flex items-center space-x-3">
-                    <!-- NEW LOGO SVG - ENLARGED -->
-                    <svg class="h-14 w-auto" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg class="h-12 w-auto" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="50" cy="40" r="38" stroke="#1F2937" stroke-width="2"/>
                         <text x="50" y="52" text-anchor="middle" font-family="serif" font-size="38" fill="#1F2937">
                             <tspan dx="-1">L</tspan><tspan dx="-8">B</tspan>
@@ -50,14 +60,14 @@
                         <text x="50" y="95" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#1F2937" font-weight="500" letter-spacing="0.1em">LEADBROTHERS</text>
                     </svg>
                 </a>
-                <a href="https://calendly.com/eliot-cornebize/30min" target="_blank" class="cta-button bg-blue-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-blue-700 hidden sm:block">
+                <button type="button" class="cta-trigger cta-button bg-blue-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-blue-700 hidden sm:block">
                     Prendre RDV
-                </a>
+                </button>
             </div>
         </header>
 
         <!-- Main Content -->
-        <main class="container mx-auto px-6">
+        <main class="container mx-auto px-6 max-w-7xl">
             <!-- Hero Section -->
             <section class="text-center py-20 sm:py-28">
                 <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 leading-tight mb-4">
@@ -66,9 +76,9 @@
                 <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8">
                     Générez plus de leads, signez plus de clients, et explosez votre chiffre d'affaires grâce à nos stratégies sur-mesure.
                 </p>
-                <a href="https://calendly.com/eliot-cornebize/30min" target="_blank" class="cta-button bg-blue-600 text-white font-bold text-lg px-8 py-4 rounded-lg hover:bg-blue-700 inline-block">
+                <button type="button" class="cta-trigger cta-button bg-blue-600 text-white font-bold text-lg px-8 py-4 rounded-lg hover:bg-blue-700 inline-block">
                     Planifier un Appel Stratégique Gratuit
-                </a>
+                </button>
                 <p class="text-sm text-gray-500 mt-4">100% offert et sans engagement.</p>
             </section>
 
@@ -130,19 +140,12 @@
 
             <!-- About Us Section -->
             <section id="qui-sommes-nous" class="py-20 bg-white rounded-2xl shadow-xl my-16">
-                <div class="container mx-auto px-6">
-                    <div class="grid md:grid-cols-2 gap-12 items-center">
-                        <div class="space-y-4">
-                             <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Une histoire de famille au service de votre croissance.</h2>
-                             <p class="text-gray-600">Leadbrothers, c'est la vision commune de trois frères. En combinant nos compétences en stratégie, technologie et créativité, nous avons bâti une agence qui place les relations humaines et les résultats au cœur de son approche.</p>
-                             <p class="text-gray-600 font-semibold">Notre force : traiter le projet de chaque client avec le même soin que s'il s'agissait du nôtre.</p>
-                        </div>
-                        <div class="grid grid-cols-3 gap-4">
-                            <!-- Replace with actual photos -->
-                            <img src="https://placehold.co/200x200/e0e7ff/4338ca?text=Frère+1" alt="Photo d'un des fondateurs de Leadbrothers" class="rounded-lg shadow-md aspect-square object-cover">
-                            <img src="https://placehold.co/200x200/e0e7ff/4338ca?text=Frère+2" alt="Photo d'un des fondateurs de Leadbrothers" class="rounded-lg shadow-md aspect-square object-cover mt-8">
-                            <img src="https://placehold.co/200x200/e0e7ff/4338ca?text=Frère+3" alt="Photo d'un des fondateurs de Leadbrothers" class="rounded-lg shadow-md aspect-square object-cover">
-                        </div>
+                <!-- MODIFICATION ICI: Suppression de la grille et centrage du contenu texte -->
+                <div class="container mx-auto px-6 text-center max-w-3xl">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Une histoire de famille au service de votre croissance.</h2>
+                    <div class="mt-4 space-y-4 text-gray-600">
+                        <p>Leadbrothers, c'est la vision commune de trois frères. En combinant nos compétences en stratégie, technologie et créativité, nous avons bâti une agence qui place les relations humaines et les résultats au cœur de son approche.</p>
+                        <p class="font-semibold">Notre force : traiter le projet de chaque client avec le même soin que s'il s'agissait du nôtre.</p>
                     </div>
                 </div>
             </section>
@@ -154,7 +157,6 @@
                 </div>
                 <div class="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-2xl">
                     <div class="flex items-center mb-4">
-                        <!-- Replace with client photo -->
                         <img src="https://placehold.co/64x64/c7d2fe/4338ca?text=AM" class="w-16 h-16 rounded-full mr-4" alt="Photo de Alexandre Martin">
                         <div>
                             <p class="font-bold text-gray-900">Alexandre Martin</p>
@@ -162,7 +164,6 @@
                         </div>
                         <div class="ml-auto flex items-center">
                             <span class="text-lg font-bold text-gray-700 mr-2">4.9</span>
-                            <!-- 4.9 stars rating -->
                             <div class="flex text-yellow-400">
                                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
                                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
@@ -183,9 +184,9 @@
                     <p class="text-lg text-blue-100 max-w-2xl mx-auto mb-8">
                         Ne perdez plus un seul client potentiel. Réservez votre appel stratégique 100% offert et découvrez le plan d'action personnalisé que nous avons pour vous.
                     </p>
-                    <a href="https://calendly.com/eliot-cornebize/30min" target="_blank" class="cta-button bg-white text-blue-700 font-bold text-lg px-8 py-4 rounded-lg hover:bg-gray-100">
+                    <button type="button" class="cta-trigger cta-button bg-white text-blue-700 font-bold text-lg px-8 py-4 rounded-lg hover:bg-gray-100">
                         Je Veux Mon Plan d'Action Gratuit
-                    </a>
+                    </button>
                 </div>
             </section>
         </main>
@@ -194,8 +195,7 @@
         <footer class="bg-white border-t">
             <div class="container mx-auto px-6 py-8 text-center text-gray-600">
                 <div class="flex justify-center items-center space-x-3 mb-4">
-                     <!-- NEW LOGO SVG - ENLARGED -->
-                     <svg class="h-12 w-auto" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                     <svg class="h-10 w-auto" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="50" cy="40" r="38" stroke="#1F2937" stroke-width="2"/>
                         <text x="50" y="52" text-anchor="middle" font-family="serif" font-size="38" fill="#1F2937">
                             <tspan dx="-1">L</tspan><tspan dx="-8">B</tspan>
@@ -252,29 +252,146 @@
         </div>
     </div>
 
+    <!-- CHATBOT MODAL -->
+    <div id="chatbot-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60 backdrop-blur-sm">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md m-4 transform transition-all">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 class="text-lg font-bold text-gray-800">Agent Qualificateur IA</h3>
+                    <button id="close-chatbot" class="text-gray-400 hover:text-gray-600">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </button>
+                </div>
+                <div id="chat-window" class="h-80 overflow-y-auto pr-4 space-y-4 flex flex-col">
+                    <!-- Les messages du chat apparaîtront ici -->
+                </div>
+                <div id="chat-input-container" class="mt-4">
+                    <div class="flex space-x-2">
+                        <input type="text" id="chat-input" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Écrivez votre réponse...">
+                        <button id="chat-send" class="bg-blue-600 text-white font-semibold px-4 py-2 rounded-lg hover:bg-blue-700">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        </button>
+                    </div>
+                </div>
+                <div id="final-cta-container" class="hidden mt-4 text-center">
+                     <a href="https://calendly.com/eliot-cornebize/30min" target="_blank" class="cta-button bg-green-500 text-white font-bold text-lg px-8 py-4 rounded-lg hover:bg-green-600 inline-block w-full">
+                        Finaliser la prise de RDV
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
-        // JavaScript to handle page switching
+        // --- SCRIPT POUR LA NAVIGATION ENTRE LES PAGES ---
         const mainContent = document.getElementById('main-content');
         const legalContent = document.getElementById('legal-content');
         const legalLink = document.getElementById('legal-link');
         const backLink = document.getElementById('back-to-main');
 
-        function showLegalPage(event) {
-            event.preventDefault();
-            mainContent.classList.add('hidden');
-            legalContent.classList.remove('hidden');
-            window.scrollTo(0, 0);
+        if (legalLink) {
+            legalLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                mainContent.classList.add('hidden');
+                legalContent.classList.remove('hidden');
+                window.scrollTo(0, 0);
+            });
+        }
+        if (backLink) {
+            backLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                legalContent.classList.add('hidden');
+                mainContent.classList.remove('hidden');
+                window.scrollTo(0, 0);
+            });
         }
 
-        function showMainPage(event) {
-            event.preventDefault();
-            legalContent.classList.add('hidden');
-            mainContent.classList.remove('hidden');
-            window.scrollTo(0, 0);
-        }
+        // --- SCRIPT POUR LE CHATBOT IA ---
+        const chatbotModal = document.getElementById('chatbot-modal');
+        const ctaTriggers = document.querySelectorAll('.cta-trigger');
+        const closeChatbotBtn = document.getElementById('close-chatbot');
+        const chatWindow = document.getElementById('chat-window');
+        const chatInput = document.getElementById('chat-input');
+        const chatSendBtn = document.getElementById('chat-send');
+        const chatInputContainer = document.getElementById('chat-input-container');
+        const finalCtaContainer = document.getElementById('final-cta-container');
 
-        legalLink.addEventListener('click', showLegalPage);
-        backLink.addEventListener('click', showMainPage);
+        const questions = [
+            "Bonjour ! Pour mieux préparer notre appel, quel est votre secteur d'activité ? (ex: Restaurant, E-commerce, Coach...)",
+            "Parfait. Et quel est votre objectif principal actuellement ? (ex: Augmenter les ventes, Obtenir plus de RDV...)",
+            "Compris. Avez-vous déjà un budget mensuel à allouer à la publicité ? Même une estimation est utile."
+        ];
+        let currentQuestionIndex = 0;
+
+        const openChatbot = () => {
+            chatbotModal.classList.remove('hidden');
+            resetChat();
+            askQuestion();
+        };
+
+        const closeChatbot = () => {
+            chatbotModal.classList.add('hidden');
+        };
+
+        const addMessage = (message, sender) => {
+            const bubble = document.createElement('div');
+            bubble.className = `w-fit max-w-xs lg:max-w-sm px-4 py-2 rounded-xl chat-bubble-${sender}`;
+            bubble.textContent = message;
+            chatWindow.appendChild(bubble);
+            chatWindow.scrollTop = chatWindow.scrollHeight;
+        };
+
+        const askQuestion = () => {
+            if (currentQuestionIndex < questions.length) {
+                setTimeout(() => {
+                    addMessage(questions[currentQuestionIndex], 'bot');
+                }, 500);
+            } else {
+                endConversation();
+            }
+        };
+        
+        const handleUserInput = () => {
+            const message = chatInput.value.trim();
+            if (message === '') return;
+
+            addMessage(message, 'user');
+            chatInput.value = '';
+            currentQuestionIndex++;
+            askQuestion();
+        };
+
+        const endConversation = () => {
+            setTimeout(() => {
+                addMessage("Excellent, il semble que nous soyons parfaitement alignés. Merci pour ces précisions !", 'bot');
+                chatInputContainer.classList.add('hidden');
+                finalCtaContainer.classList.remove('hidden');
+            }, 500);
+        };
+
+        const resetChat = () => {
+            chatWindow.innerHTML = '';
+            currentQuestionIndex = 0;
+            chatInputContainer.classList.remove('hidden');
+            finalCtaContainer.classList.add('hidden');
+        };
+
+        ctaTriggers.forEach(btn => btn.addEventListener('click', openChatbot));
+        closeChatbotBtn.addEventListener('click', closeChatbot);
+        chatSendBtn.addEventListener('click', handleUserInput);
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                handleUserInput();
+            }
+        });
+        // Close modal on outside click
+        chatbotModal.addEventListener('click', (e) => {
+            if (e.target === chatbotModal) {
+                closeChatbot();
+            }
+        });
+
     </script>
 </body>
 </html>
+
